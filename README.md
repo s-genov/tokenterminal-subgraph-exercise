@@ -7,8 +7,6 @@
 
 # Welcome to the Token Terminal subgraph challenge!
 
-## About this repository
-
 If you are reading this, you are probably already familiar with [Token Terminal](https://www.tokenterminal.com/). We provide fundamental data on blockchains and [Web3](https://ethereum.org/en/developers/docs/web2-vs-web3/) applications.
 
 One of the various tools that helps us achieve this is The Graph protocol. [The Graph](https://thegraph.com/) is a decentralized indexing protocol for querying data from blockchains like Ethereum. We use The Graph protocol extensively on Token Terminal to ensure we have control over the entire data pipeline (from querying [smart contract](https://ethereum.org/en/developers/docs/smart-contracts/) data to calculating high-level aggregate [business metrics](https://docs.tokenterminal.com/our-metrics)).
