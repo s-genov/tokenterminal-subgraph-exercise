@@ -4,10 +4,10 @@
   "scripts": {
     "codegen": "graph codegen",
     "build": "graph build",
-    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ YOUR-GITHUB-NAME/task-2",
-    "create-local": "graph create --node http://localhost:8020/ YOUR-GITHUB-NAME/task-2",
-    "remove-local": "graph remove --node http://localhost:8020/ YOUR-GITHUB-NAME/task-2",
-    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 YOUR-GITHUB-NAME/task-2"
+    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ s-genov/task2",
+    "create-local": "graph create --node http://localhost:8020/ s-genov/task2",
+    "remove-local": "graph remove --node http://localhost:8020/ s-genov/task2",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 s-genov/task2"
   },
   "dependencies": {
     "@graphprotocol/graph-cli": "0.23.1",
