@@ -5,7 +5,7 @@ export function handleTransfer(event: Transfer): void {
   // Create a new TransferEvent entity based on the transaction hash of the event
   // let ...
   let contract = ENSToken.bind(event.address)
-  let transferEvent = new TransferEvent(event.transaction.hash.toString());
+  let transferEvent = new TransferEvent(event.transaction.hash.toHex());
   
   // Populate transferEvent fields based on event metadata
   // transferEvent.timestamp = 
@@ -13,6 +13,7 @@ export function handleTransfer(event: Transfer): void {
   transferEvent.block = event.block.number;
   transferEvent.fromAddress = event.params.from;
   transferEvent.toAddress = event.params.to;
+  transferEvent.transferAmount = event.params.value;
   transferEvent.fromBalance = contract.balanceOf(event.params.from);
   transferEvent.toBalance = contract.balanceOf(event.params.to);
 
