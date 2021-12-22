@@ -4,10 +4,17 @@ import { TransferEvent } from '../generated/schema'
 export function handleTransfer(event: Transfer): void {
   // Create a new TransferEvent entity based on the transaction hash of the event
   // let ...
-
+  let contract = ENSToken.bind(event.address)
+  let transferEvent = new TransferEvent(event.transaction.hash.toString());
+  
   // Populate transferEvent fields based on event metadata
   // transferEvent.timestamp = 
-
+  transferEvent.timestamp = event.block.timestamp.toI32();
+  transferEvent.block = event.block.number;
+  transferEvent.fromAddress = event.params.from;
+  transferEvent.toAddress = event.params.to;
+  transferEvent.fromBalance = contract.balanceOf(event.params.from);
+  transferEvent.toBalance = contract.balanceOf(event.params.to);
 
   // Use the balanceOf public read-only function of the ENSToken 
   // contract to query the balance of the "from" and "to" addresses
@@ -17,7 +24,6 @@ export function handleTransfer(event: Transfer): void {
   // Check this section in The Graph docs:
   // https://thegraph.com/docs/developer/assemblyscript-api#access-to-smart-contract-state
   
-
   // Save the entity to the store
-    
+  transferEvent.save()
 }
