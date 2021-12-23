@@ -1,0 +1,10 @@
+type Global @entity {
+  "Global entity id"
+  id: ID!
+
+  "Total registration fees generated"
+  registrationFees: BigInt!
+
+  "Total renewal fees generated"
+  renewalFees: BigInt!
+}
