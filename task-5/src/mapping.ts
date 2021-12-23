@@ -8,7 +8,7 @@ import { getOrCreatePool } from "./helpers"
 
 export function handleAcquired(event: Acquired): void {
 
-  let entity = getOrCreatePool(event.params.id.toHex())
+  let entity = getOrCreatePool()
   let contract = HegicCALL.bind(event.address)
 
   entity.name = contract.name();
