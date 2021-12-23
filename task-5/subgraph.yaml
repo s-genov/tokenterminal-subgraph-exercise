@@ -1,0 +1,24 @@
+specVersion: 0.0.2
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: HegicCALL
+    network: mainnet
+    source:
+      address: "0xb9ed94c6d594b2517c4296e24A8c517FF133fb6d"
+      abi: HegicCALL
+      startBlock: 13797319
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - Pool
+      abis:
+        - name: HegicCALL
+          file: ./abis/HegicCALL.json
+      eventHandlers:
+        - event: Acquired(indexed uint256,uint256,uint256)
+          handler: handleAcquired
+      file: ./src/mapping.ts

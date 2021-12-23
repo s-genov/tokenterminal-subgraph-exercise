@@ -1,0 +1,13 @@
+type Pool @entity {
+  "Pool smart contract address"
+  id: ID!
+
+  "Name of the pool"
+  name: String!
+  
+  "Total cumulative premiums"
+  cumulativePremium: BigInt!
+
+  "Total cumulative settlement fees"
+  cumulativeSettlementFees: BigInt!
+}
